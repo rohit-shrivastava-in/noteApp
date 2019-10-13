@@ -1,0 +1,62 @@
+<section ng-controller="myCtrl">
+
+  <header class="flex-container">
+    <section>
+      <i ng-click="handleToggle()" ng-class="{ 'glyphicon glyphicon-indent-right pointer': !toggle, 'glyphicon glyphicon-indent-left pointer': toggle}"></i>
+    </section>
+    <section>
+        <i class="glyphicon glyphicon-list-alt pointer" ng-click="handleCreateNote()"></i>
+    </section>
+    <section>
+      <i ng-disabled="!isNew" class="glyphicon glyphicon-edit pointer" ng-click="handleEditable()"></i>
+    </section>
+    <section>
+        <i class="glyphicon glyphicon-floppy-disk pointer" ng-click="handleSaveNote()"></i>
+    </section>
+    <section>
+        <i class="glyphicon glyphicon-trash pointer" ng-click="handleDeleteNote()"></i>
+    </section>
+    <section>
+        <i class="glyphicon glyphicon-search pointer">
+          <!-- <input type="text"> -->
+        </i>
+    </section>
+  </header>
+
+  <div class="flex-container folderList">
+
+    <section style="flex-grow: 2" ng-show="!toggle">
+      <article ng-repeat="folder in folders | orderBy:'folderName'"
+        ng-class="{ 'selected' : selectedFolder == folder.id}" ng-click="handleChangeFolder(folder.id)">
+        <h5 class="heading">{{folder.folderName}}</h5>
+      </article>
+
+      <div class="addNewFolder">
+        <!-- <button> -->
+        <input ng-model="folderName">
+        <span class="glyphicon glyphicon-send pointer" ng-click="createFolder()" />
+        <!-- </button> -->
+      </div>
+    </section>
+
+    <section style="flex-grow: 2">
+      <article ng-repeat="note in selectedNotes" ng-class="{ 'selected' : selectedNote.id == note.id}"
+        ng-click="handleSelectNote(note)">
+        <h5 class="heading">{{note.notesTitle}}</h5>
+        <section class="description">{{note.notesDesc}}</section>
+      </article>
+      <article ng-if="!selectedNotes.length">
+          No Notes Found
+      </article>
+
+    </section>
+
+    <section style="flex-grow: 6">
+      <article ng-if="selectedNote.notesTitle || isNew || isEditable">
+        <input placeholder="Note Title" class="heading-input heading" type="text" ng-model="selectedNote.notesTitle" ng-disabled="!isEditable" />
+        <textarea placeholder="Note Description" rows="4" cols="50" ng-model="selectedNote.notesDesc" ng-disabled="!isEditable"> </textarea>
+      </article>
+    </section>
+    
+  </div>
+</section>

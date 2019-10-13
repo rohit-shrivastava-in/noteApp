@@ -1,0 +1,89 @@
+.flex-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.flex-container>section {
+    height: 565px;
+    border-right: 2px solid #f1f1f1;
+    width: 100px;
+}
+
+.folderList article {
+    font-size: 15px;
+    padding: 5px 0px;
+    padding-left: 10px;
+    cursor: pointer;
+    color: gray
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+}
+
+.selected {
+    background: #f1f1f1;
+}
+
+.addNewFolder {
+    position: absolute;
+    bottom: 0;
+}
+
+.addNewFolder button {
+    background: transparent;
+    border: none;
+}
+
+.float-right {
+    float: right;
+    padding-right: 5px;
+}
+
+.left-icon {
+    padding-right: 5px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: #ddd8d8;
+}
+
+header section {
+    background-color: #f1f1f1;
+    /* color: white; */
+    border-radius: 5px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px !important;
+    height: 30px !important;
+}
+.heading {
+    font-size:20px; 
+    color: black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.heading-input{
+    width: 100%;
+}
+textarea{
+    resize: none;
+    width: 100%;
+    height: 500px;
+}
+textarea:disabled, input:disabled{
+    background: white;
+    border: none;
+}
