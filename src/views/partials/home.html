@@ -38,7 +38,7 @@
     </section>
 
     <section style="flex-grow: 2">
-      <article ng-repeat="note in selectedNotes" ng-class="{ 'selected' : selectedNote.id == note.id}"
+      <article ng-repeat="note in selectedNotes | orderBy:'-createdDate'" ng-class="{ 'selected' : selectedNote.id == note.id}"
         ng-click="handleSelectNote(note)">
         <h5 class="heading">{{note.notesTitle}}</h5>
         <section class="description">{{note.notesDesc}}</section>
@@ -50,6 +50,7 @@
 
     <section style="flex-grow: 6" ng-click="handleEditable()">
       <article ng-if="selectedNote.notesTitle || isNew || isEditable">
+        <header class="noteDate">{{selectedNote.createdDate | date : "MMMM dd, yyyy 'at' h:mm a"}}</header class="noteDate">
         <input placeholder="Note Title" class="heading-input heading" type="text" ng-model="selectedNote.notesTitle" ng-disabled="!isEditable" />
         <textarea placeholder="Note Description" rows="4" cols="50" ng-model="selectedNote.notesDesc" ng-disabled="!isEditable"> </textarea>
       </article>

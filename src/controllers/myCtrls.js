@@ -18,12 +18,13 @@ export default function myCtrl($scope, NotesService) {
     document.onkeypress = () => _idleSecondsCounter = 0;
 
     window.setInterval(CheckIdleTime, 1000);
+
     function CheckIdleTime() {
         _idleSecondsCounter++;
-       if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+        if (_idleSecondsCounter >= IDLE_TIMEOUT) {
             $scope.handleSaveNote()
-           _idleSecondsCounter = 0;
-       }
+            _idleSecondsCounter = 0;
+        }
     }
 
     $scope.createFolder = function () {
@@ -91,11 +92,16 @@ export default function myCtrl($scope, NotesService) {
     }
 
     $scope.handleSaveNote = function () {
-        let { notesDesc, notesTitle } = $scope.selectedNote;
-        if(($scope.isEditable || $scope.isNew) &&  (notesDesc || notesTitle)){
+        let {
+            notesDesc,
+            notesTitle
+        } = $scope.selectedNote;
+        if (($scope.isEditable || $scope.isNew) && (notesDesc || notesTitle)) {
             let selectedNote = $scope.selectedNote;
+            selectedNote.createdDate = new Date().toISOString().toString();
+            console.log(selectedNote)
             $scope.isNew && (selectedNote.folderId = $scope.selectedFolder);
-            NotesService.createNote(selectedNote).then(function(response){
+            NotesService.createNote(selectedNote).then(function (response) {
                 $scope.selectedNote = response.data;
                 getNotes();
             })
@@ -113,7 +119,7 @@ export default function myCtrl($scope, NotesService) {
     }
 
     $scope.handleEditable = function () {
-        if(!$scope.isEditable || !$scope.isNew){
+        if (!$scope.isEditable || !$scope.isNew) {
             $scope.isEditable = true;
             $scope.isNew = false;
         }
@@ -123,7 +129,7 @@ export default function myCtrl($scope, NotesService) {
         if ($scope.selectedFolder >= 0) {
             $scope.selectedNotes = $scope.notes.filter(function (note) {
                 return note.folderId == $scope.selectedFolder;
-            })
+            });
         } else {
             $scope.selectedNotes = $scope.notes;
         }

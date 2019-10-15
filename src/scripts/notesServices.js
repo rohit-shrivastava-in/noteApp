@@ -29,12 +29,14 @@ export default function NotesService($http) {
     id,
     folderId,
     notesTitle,
-    notesDesc
+    notesDesc,
+    createdDate
   }) {
     let params = {
       folderId,
       notesTitle,
-      notesDesc
+      notesDesc,
+      createdDate
     }
     if (id) params.id = id;
     let method = id ? 'PUT' : 'POST';

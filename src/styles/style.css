@@ -93,3 +93,9 @@ textarea:disabled, input:disabled{
 textarea:focus, input:focus{
     outline: none;
 }
+.noteDate{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: #ffffff;
+}
