@@ -7,18 +7,6 @@
     {
       "id": 1,
       "folderName": "Database"
-    },
-    {
-      "folderName": "gf",
-      "id": 2
-    },
-    {
-      "folderName": "gre",
-      "id": 3
-    },
-    {
-      "folderName": "gre",
-      "id": 4
     }
   ],
   "notes": [
@@ -29,40 +17,22 @@
       "notesDesc": "AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications."
     },
     {
-      "folderId": "0",
-      "notesTitle": "de",
-      "notesDesc": "de",
-      "id": 12
+      "id": 1,
+      "folderId": 0,
+      "notesTitle": "AngularJSs",
+      "notesDesc": "React can be used as a base in the development of single-page or mobile applications, as it is optimal for fetching rapidly changing data that needs to be recorded."
     },
     {
-      "folderId": "0",
-      "notesTitle": "RactJS",
-      "notesDesc": "AngularJS is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.",
-      "id": 13
+      "id": 3,
+      "folderId": 1,
+      "notesTitle": "MongoDB",
+      "notesDesc": "MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema."
     },
     {
-      "folderId": "0",
-      "notesTitle": "d",
-      "notesDesc": "xxx",
-      "id": 14
-    },
-    {
-      "folderId": "1",
-      "notesTitle": "f",
-      "notesDesc": "f",
-      "id": 15
-    },
-    {
-      "folderId": "2",
-      "notesTitle": "gre",
-      "notesDesc": "gre",
-      "id": 16
-    },
-    {
-      "folderId": "1",
-      "notesTitle": "btyh",
-      "notesDesc": "th",
-      "id": 17
+      "id": 4,
+      "folderId": 1,
+      "notesTitle": "SQL",
+      "notesDesc": "SQL is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system."
     }
   ]
 }

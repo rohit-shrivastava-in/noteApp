@@ -105,9 +105,10 @@ export default function myCtrl($scope, NotesService) {
     $scope.handleDeleteNote = function () {
         const id = $scope.selectedNote.id;
         if (id >= 0) {
-            NotesService.deleteNote(id);
-            $scope.selectedNote = {}
-            getNotes();
+            NotesService.deleteNote(id).then(response => {
+                $scope.selectedNote = {}
+                getNotes();
+            })
         }
     }
 
