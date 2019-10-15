@@ -83,7 +83,7 @@ export default function myCtrl($scope, NotesService) {
     $scope.handleCreateNote = function () {
         $scope.selectedNote = {
             "folderId": $scope.selectedFolder,
-            "notesTitle": "",
+            "notesTitle": "Note Title",
             "notesDesc": ""
         }
         $scope.isEditable = true;
@@ -97,8 +97,8 @@ export default function myCtrl($scope, NotesService) {
             $scope.isNew && (selectedNote.folderId = $scope.selectedFolder);
             NotesService.createNote(selectedNote).then(function(response){
                 $scope.selectedNote = response.data;
+                getNotes();
             })
-            getFolders();
         }
     }
 
@@ -107,13 +107,15 @@ export default function myCtrl($scope, NotesService) {
         if (id >= 0) {
             NotesService.deleteNote(id);
             $scope.selectedNote = {}
-            getFolders();
+            getNotes();
         }
     }
 
     $scope.handleEditable = function () {
-        $scope.isEditable = true;
-        $scope.isNew = false;
+        if(!$scope.isEditable || !$scope.isNew){
+            $scope.isEditable = true;
+            $scope.isNew = false;
+        }
     }
 
     function filterNotes() {
@@ -125,7 +127,6 @@ export default function myCtrl($scope, NotesService) {
             $scope.selectedNotes = $scope.notes;
         }
         $scope.isEditable = false;
-        // $scope.selectedNote = $scope.selectedNotes[0];
     }
 
 }
