@@ -26,8 +26,8 @@ export default function myCtrl($scope, NotesService) {
             _idleSecondsCounter = 0;
         }
     }
-
     $scope.createFolder = function () {
+        console.log("clicked")
         const folderName = $scope.folderName;
         if (folderName) {
             NotesService.createFolder(folderName)

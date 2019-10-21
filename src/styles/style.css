@@ -38,11 +38,36 @@
     bottom: 0;
 }
 
-.addNewFolder button {
-    background: transparent;
+.addNewFolder button,  .addNewFolder button:hover, .addNewFolder button:focus, .addNewFolder button:active, .addNewFolder button:active:focus{
+    background: #fff;
     border: none;
+    color: black;
+    outline:none;
 }
-
+.badge {
+    display: inline-block;
+    /* min-width: 3px; */
+    padding: 3px 6px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+}
+.folderName, .folderName:focus, .folderName:active{
+    border-color: transparent;
+    outline: none;
+    background: white;
+    border: 1px solid black;
+    font-size: 17px;
+    padding: 0 12px;
+    line-height: 30px;
+} 
 .float-right {
     float: right;
     padding-right: 5px;
