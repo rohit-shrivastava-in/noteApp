@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://https://github.com/rohit2389/angular-starterkit"
+    "url": "git+https://github.com/rohit2389/noteApp"
   },
   "keywords": [
     "webpack",
@@ -22,7 +22,7 @@
   "author": "webkid.io",
   "license": "MIT",
   "bugs": {
-    "url": "https://https://github.com/rohit2389/angular-starterkit/issues"
+    "url": "https://github.com/rohit2389/noteApp/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
